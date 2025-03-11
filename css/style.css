@@ -1,0 +1,1096 @@
+@charset "utf-8";
+
+/* PARTE GENERAL ======================================================== */
+
+*,*::after,*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 16px;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  font: 1rem/1.5rem "Open Sans", serif; 
+  display: grid;
+  grid-template-rows: 10vh auto auto;
+  grid-template-columns: 100%;
+  position: relative;
+}
+
+
+h2{
+  padding: 1.3rem 0;
+  text-align: center;
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+}
+
+p{
+  color: #333;
+}
+
+body>header, footer{
+  background-color: #000;
+  color: #ffffff;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+main>section{
+  width: 90%;
+  align-self: center;
+  margin-bottom: 2rem;
+}
+
+footer{
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p{
+  color: #ffffff;
+  text-align: left;
+}
+
+footer h2{
+  font-size: 1.5rem;
+}
+
+footer p{
+  font-size: 1rem;
+}
+
+
+/* Boton de Compra */
+.comprar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.comprar p{
+  background-color: #83838336;
+  border-radius: 5px;
+  padding: 0.25rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: right;
+}
+
+.comprar a{
+  text-decoration: none;
+  font-weight: bolder;
+  color: #666;
+}
+
+/* Botón Saber-ne Més */
+
+.sabernemes{
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+.sabernemes p a{
+  border: 4px solid #333;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.sabernemes p a:hover{
+  background-color: #800b0b;
+  color: #ffffff;
+}
+
+/* Boton de + en tiendas */
+
+.boto_mes{
+  margin: 1rem;
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+  >a{
+    text-decoration: none;
+    text-align: center;
+    border: 5px solid #333;
+    padding: 0.5rem;
+    color: #000;
+  }
+}
+
+.boto_mes>a:hover{
+  background-color: #800b0b;
+  color: #ffffff;
+}
+
+
+
+/* HEADER ======================================== */
+
+body>header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: sticky;
+  z-index: 1;
+  top: 0px;
+  h1{
+    text-align: center;
+  }
+}
+
+/* MENU NAVEGACION =============================== */
+
+nav ul{
+  list-style: none;
+  a{
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+nav ul a:hover{
+  color: #800b0b;
+}
+
+nav li>ul{
+  display: none;
+}
+
+#mobile :where(ul, input) {
+  display: none;
+}
+
+#mobile>label {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  background-color: #ffffff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+
+#mobile :where(label, li):hover {
+  cursor: pointer;
+}
+
+#mobile input:checked~ul {
+  display: block;
+  position: fixed;
+  z-index: 2;
+}
+
+#mobile ul {
+  width: 50%;
+}
+
+#mobile li {
+  display: block;
+  background: rgba(255, 255, 255, 0.918);
+  padding: 0.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  font-size: 1.2em;
+  padding-left: 0.75rem;
+}
+
+#mobile > ul >li:where(:nth-child(3), :nth-child(4), :nth-child(5)){
+  padding-left: 2rem;
+}
+
+
+/* QUI SOM SECTION =============================== */
+
+#quisom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+#quisom figure img, #clublectura figure img, #noticies figure img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#quisom figure{
+  width: 100%;
+  height: 30vh;
+}
+
+#quisom article{
+  padding: 0 2.3rem 2rem 2.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#quisom article p:nth-child(2){
+  padding-bottom: 1rem;
+}
+
+/* LLIBRES Tendes Venta Diferents ============================ */
+
+:where(#venuts, #novetats, #proximes){
+  position: relative;
+}
+
+:where(#venuts, #novetats, #proximes)>p:first-of-type{  
+  position: absolute;
+  top: 50%;
+  left: 0vw;
+}
+
+:where(#venuts, #novetats, #proximes)>p:nth-of-type(2){  
+  position: absolute;
+  top: 50%;
+  right: 0vw;
+}
+
+:where(#venuts, #novetats, #proximes)>p:where(:first-of-type, :nth-of-type(2)){
+  border-radius: 50%;
+  background-color: rgba(207, 207, 207, 0.753);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+:where(#venuts, #novetats, #proximes)>p:where(:first-of-type, :nth-of-type(2)):hover{
+  background-color: rgba(224, 224, 224, 0.925);
+}
+
+:where(#venuts, #novetats, #proximes, #autors)>section{
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 1rem;
+  >h3{
+    display: none;
+  }
+}
+
+:where(#venuts, #novetats, #proximes)>section>div>:where(p, h4){
+  padding-left: 1vw;
+}
+
+:where(#venuts, #novetats, #proximes, #autors) div>figure, :where(#venuts, #novetats, #proximes, #autors) div>figure>img{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.temp768{
+  display: none;
+}
+
+.temp1024{
+  display: none;
+}
+
+/* CLUB DE LECTURA =============================== */
+
+#clublectura{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#clublectura h2{
+  padding-bottom: 2rem;
+}
+
+#clublectura article{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.3rem 2rem;
+}
+
+#clublectura p, ul{
+  margin-bottom: 1rem;
+}
+
+#clublectura p:last-child{
+  margin-bottom: 0;
+}
+
+#clublectura li{
+  margin-bottom: 0.8rem;
+}
+
+#clublectura span{
+  font-weight: bold;
+}
+
+#clublectura figure{
+  display: none;
+}
+
+
+/* NOTICIES =============================== */
+
+#noticies div{
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  margin-bottom: 1.5rem;
+}
+
+#noticies figure{
+  width: 95%;
+  align-self: center;
+  margin-top: 1rem;
+}
+
+#noticies span{
+  font-size: 16px;
+  color: #8D0B41;
+}
+
+#noticies div p{
+  padding: 1.7rem 1.5rem 0 1.5rem;
+}
+
+#noticies div p:last-child{
+  padding-bottom: 3rem;
+}
+
+#noticies p a{
+  text-decoration: none;
+  color: #000;
+}
+
+#noticies p a:hover{
+  color: #800b0b;
+}
+
+
+/* AUTORS LLIBRES =============================== */
+
+#autors{
+  width: 100%;
+}
+
+#autors>section>div>p{
+  text-align: center;
+  padding: 1rem 0;
+}
+
+#autors>section div>figure>img:hover{
+  border-top: 1px #333 solid;
+  border-right: 1px #333 solid;
+  border-left: 1px #333 solid;
+  box-shadow: 0px 0px 12px #333;
+}
+
+#autors section{
+  gap: 2rem 1rem;
+  margin-bottom: 1rem;
+}
+
+#autors :where(figure, img){
+  width: 100%;
+  object-fit: cover;
+}
+
+#autors>section{
+  background-color: #ffa60033;
+  padding: 1rem 1rem;
+}
+
+#autors>div{
+  justify-items: center;
+}
+
+/* MES AUTORS */
+#autors>p:last-child{
+  text-align: center;
+}
+
+
+/* SUBSCRIUTE FORMULARI ========================== */
+
+
+/* Estilos del FORMULARIO */
+
+#formsub{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../images/formsub.jpg);
+  background-size: cover;
+  width: 100%;
+}
+
+#formsub form{
+  background-color: rgba(255, 255, 255, 0.726);
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0 3rem 0;
+}
+
+#formsub h2{
+  display: none;
+}
+
+#formsub legend{
+  font-family: "EB Garamond", serif;
+  font-size: 28px;
+  padding: 2rem 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+#formsub fieldset{
+  border: 0;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#formsub form fieldset ul{
+  list-style-type: none;
+}
+
+#formsub label{
+  display: block;
+  padding: 0.8rem 0 0.3rem 0;
+  line-height: 1.2rem;
+}
+
+#formsub fieldset:first-child input{
+  border: 1px solid rgba(128, 128, 128, 0.262);
+  width: 60vw;
+  line-height: 1.5rem;
+}
+
+/* Termes i condicions */
+
+#formsub fieldset:nth-child(2){
+  display: flex;
+  flex-direction: row;
+  
+}
+
+#formsub fieldset:nth-child(2) label{
+  padding: 0;
+}
+
+#formsub fieldset:nth-child(2) input{
+  margin: 0 0.5rem;
+}
+
+/* Botones Inscriure'm y Borrar Dades */
+
+#formsub input[type="submit"]{
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.726);
+  padding: 1rem 1rem;
+  margin: 1.5rem 4rem 1.5rem 0;
+  box-shadow: 10px 10px 25px #000;
+}
+
+#formsub input[type="reset"]{
+  font-size: 18px;
+  background: none;
+	color: rgb(80, 80, 80);
+  text-decoration: underline;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+
+/* FORMULARI D'AUTOR============================== */
+
+#formauto{
+  width: 90%;
+}
+
+#formauto p:first-of-type{
+  text-align: center;
+}
+
+#formauto form{
+  background-image: url(../images/back_escritor.jpg);
+  background-size: cover;
+  padding: 1rem;
+}
+
+#formauto fieldset{
+  background-color: rgba(255, 255, 255, 0.726);
+  border-radius: 5px;
+}
+
+#formauto legend{
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#formauto>form>fieldset{
+  padding: 1rem;
+}
+
+#formauto>form{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#formauto>form>fieldset>ul{
+  list-style: none;
+}
+
+#formauto>form>fieldset{
+  display: flex;
+}
+
+#formauto li{
+  margin-top: 1rem;
+  &:nth-last-of-type(2){
+    margin-top: 0;
+  }
+}
+
+#formauto>form>fieldset>ul>li>label{
+  display: block;
+}
+
+#formauto>form>fieldset>ul>li:nth-last-child(2){
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+#formauto>form>fieldset>ul>li:last-child{
+  text-align: center;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Estilos Input */
+
+#formauto input{
+  border: 0px;
+  line-height: 2rem;
+  padding: 0 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#formauto input[type="text"], #formauto input[type="email"]{
+  width: 100%;
+}
+
+
+#formauto input:where([type="submit"],[type="reset"] ){
+  background-color: aliceblue;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+/* Boton adjuntar archivo */
+
+.custom-file-input {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.custom-file-input input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#previewContainer {
+  margin-top: 20px;
+}
+
+#filePreview {
+  max-width: 100%;
+  max-height: 300px;
+  border: 1px solid #ff0000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#fileName {
+  color: #333;
+}
+
+/* MAPA ========================================== */
+
+#mapa{
+  width: 100%;
+  margin: 0;
+  padding-bottom: 0;
+}
+#mapa iframe{
+  width: 100%;
+  height: 40vh;
+  margin: 0;
+}
+
+
+/* MEDIA QUERIES =============================================================*/
+
+@media(min-width: 768px){
+
+  /* HEADER */
+  header{
+    padding: 3.5rem;
+  }
+
+
+  footer{
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
+  }
+  
+  /* QUI SOM */
+
+  #quisom figure{
+    height: 37vh;
+  }
+
+  #quisom figure img{
+    object-position: bottom right;
+  }
+
+  /* NOTICIES  */
+
+  #noticies{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    align-items: center;
+    width: 100%;
+  }
+
+  #noticies h2{
+    width: 100%;
+  }
+
+  #noticies div{
+    width: 47%;
+    height: 75vh;
+    margin: 0.7rem;
+  }
+
+  #noticies figure{
+    width: 90%;
+    height: 30vh;
+  }
+  
+  #noticies div p{
+    padding: 1rem 4rem 0 4rem;
+  }
+
+  /* FORMULARIO */
+
+  #formsub form{
+    width: 55vw;
+  }
+
+  #formsub fieldset:first-child input{
+    width: 35vw;
+  }
+
+  /* Canvi tamany llibres tendes */
+  :where(#venuts, #novetats, #proximes, #autors)>section{
+    grid-template-columns: repeat(4, auto);
+  }
+
+  :is(#venuts, #novetats, #proximes)>section>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  :where(#venuts, #novetats, #proximes) div>figure, :where(#venuts, #novetats, #proximes) div>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Temporal de mostra mes llibres, teoricament amb Javascript */
+
+  :is(#venuts, #novetats, #proximes)>section>.temp1024{
+    display: none;
+  }
+
+  /* Tamany fotografies irregulars reparat */
+  #autors :where(figure, img){
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Formulario AUTOR */
+  #formauto li{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #formauto fieldset ul{
+    width: 90%;
+  }
+
+  #formauto fieldset{
+    justify-content: center;
+    width: 70%;
+  }
+
+  #formauto input[type="text"], #formauto input[type="email"]{
+    width: auto;
+  }
+
+  #formauto li:nth-of-type(4){
+    flex-direction: column;
+  }
+
+}
+
+@media(min-width: 1024px){
+
+  /* QUI SOM */
+
+  #quisom{
+    flex-direction: row;
+    width: 100%;
+    background-color: #fafafa;
+  }
+
+  #quisom figure{
+    display: inline-block;
+    width: 55%;
+    height: 100%;
+  }
+
+  #quisom article{
+    padding: 2rem 3rem;
+    width: 45%;
+  }
+
+  /* CLUB DE LECTURA */
+
+  #clublectura{
+    flex-direction: row;
+    width: 100%;
+    background-color: #fafafa;
+    padding: 0 1.5rem;
+  }
+
+  #clublectura figure{
+    display: inline-block;
+    width: 42%;
+  }
+
+  #clublectura article{
+    padding: 2rem 3rem;
+    width: 58%;
+  }
+
+
+  /* NOTICIES */
+
+  #noticies div{
+    width: 44%;
+    height: 68vh;
+    margin-left: 1.9rem;
+    margin-right: 1.9rem;
+  }
+
+  #noticies figure{
+    height: 35vh;
+  }
+
+  /* FORMULARIO */
+
+  #formsub form{
+    width: 40vw;
+  }
+
+  #formsub fieldset:first-child input{
+    width: 25vw;
+  }
+
+
+  /* SECCIONES DE COMPRA CON GRID */
+  :where(#venuts, #novetats, #proximes)>section{
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* Mostra més llibres a les tendes, teoricament amb Javascript */
+  :is(#venuts, #novetats, #proximes)>section>.temp1024{
+    display: flex;
+  }
+
+  :where(#venuts, #novetats, #proximes) div :where(h4, p){
+    font-size: 0.8rem;
+  }
+
+  /* Amplada del background formulari */
+  #formauto fieldset{
+    width: 70%;
+    justify-content: center;
+  }
+
+  #formauto input[type="text"], #formauto input[type="email"]{
+    width: 70%;
+  }
+
+}
+
+@media (min-width: 1440px) {
+
+  /* General */
+  p, ul, #formsub label{
+    font-size: 18px;
+  }
+
+  h2{
+    font-size: 32px;
+    padding: 2rem;
+  }
+
+
+  .sabernemes{
+    margin-top: 1rem;
+  }
+
+  /* HEADER */
+  header{
+    padding: 4rem;
+  }
+
+  /* QUI SOM */
+  #quisom article{
+    padding: 0 12rem;
+    line-height: 2;
+  }
+
+  /* CLUB DE LECTURA */
+
+  #clublectura{
+    padding: 2rem 0;
+  }
+
+  #clublectura article{
+    padding: 2rem 12rem;
+    line-height: 1.5;
+  }
+
+  #clublectura figure{
+    padding-left: 4rem;
+  }
+
+  /* NOTICIES */
+
+  #noticies div{
+    width: 24%;
+    height: 70vh;
+    margin: 0.4rem;
+  }
+
+  #noticies figure{
+    width: 100%;
+    height: 30vh;
+    margin-top: 0;
+  }
+
+  #noticies div p{
+    padding: 1.5rem 2.3rem 0 2.3rem;
+  }
+
+  /* FORMULARIO */
+
+  #formsub form{
+    width: 35vw;
+  }
+
+  #formsub fieldset:first-child input{
+    width: 20vw;
+  }
+
+  #formsub legend{
+    font-size: 32px;
+  }
+
+  /* Amplada del background formulari */
+  #formauto fieldset{
+    width: 50%;
+    justify-content: center;
+  }
+
+  :where(#venuts, #novetats, #proximes) div :where(h4, p){
+    font-size: 1rem;
+  }
+
+}
+
+@media(min-width: 1920px){
+  #mobile>label {
+    width: 75px;
+    height: 75px;
+    margin: 25px;
+    font-size: 1.5rem;
+  }
+
+  :where(#venuts, #novetats, #proximes) div :where(h4, p){
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  #formauto legend{
+    font-size: 2rem;
+  }
+
+  footer p{
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: left;
+  }
+
+}
+
+@media (min-width: 2560px){
+  
+  /* General */
+  p, ul, #formsub label{
+    font-size: 26px;
+  }
+
+  h2{
+    font-size: 40px;
+    padding: 2rem;
+  }
+
+  #mobile>label {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+  }
+
+  .sabernemes{
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .boto_mes{
+    margin: 1.5rem 0;
+  }
+
+  /* HEADER */
+  header{
+    font-size: 30px;
+    padding: 6rem;
+  }
+
+  /* CLUB DE LECTURA */
+
+  #clublectura{
+    padding: 4rem 0;
+  }
+
+  #clublectura article{
+    padding: 2rem 18rem;
+  }
+
+  /* NOTICIES */
+
+  #noticies div{
+    width: 23%;
+    height: 60vh;
+    margin: 1.5rem;
+  }
+
+  #noticies figure{
+    width: 100%;
+    height: 30vh;
+    margin-top: 0;
+  }
+
+  #noticies span{
+    font-size: 28px;
+  }
+
+  #noticies div p{
+    padding: 2rem 3rem 0rem 3rem;
+    line-height: 1.3;
+    font-size: 30px;
+  }
+
+  /* FORMULARIO */
+
+  #formsub form{
+    width: 30vw;
+    padding: 2.5rem;
+    margin: 7rem 0;
+  }
+
+  #formsub fieldset:first-child input{
+    width: 15vw;
+    line-height: 2.7;
+  }
+
+  #formsub fieldset:first-child label{
+    padding: 0.7rem;
+  }
+
+  #formsub legend{
+    font-size: 40px;
+  }
+
+  #formsub input[type="submit"]{
+    font-size: 24px;
+  }
+}
