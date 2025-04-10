@@ -1,6 +1,6 @@
 # Editoline - Website Proposal
 
-**Editoline** is a website proposal designed for a fictional publishing company. The goal of this project is to present a simple and elegant platform to showcase the publisher’s catalog and services.
+**Editoline** is a website proposal designed for a fictional publishing company. It is an easy to use and elegant platform to showcase the publisher’s catalog and services.
 
 The design of the website is characterized by its **simplicity** and **minimalist style**, aiming to create a clean and distraction-free user experience, allowing the content to take center stage.
 
