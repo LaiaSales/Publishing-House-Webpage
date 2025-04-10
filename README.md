@@ -9,7 +9,7 @@ The design is characterized by its **minimalist style**, aiming to create a clea
 - **Clean and modern design:** The user interface is designed to be intuitive and easy to navigate.
 - **Simple structure:** The project includes key sections such as information about the publishing company, book catalog, and contact details.
 - **Responsive:** The website is optimized to adapt to different devices, offering a great experience on both computers and mobile devices.
-- **Fictional content:** All content on the website is fictional and has been created for demonstration purposes to show what a website for a publishing company might look like.
+- **Fictional content:** All content on the website is fictional and has been created for demonstration purposes.
 
 ---
 
